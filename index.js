@@ -1,0 +1,1 @@
+import './main.tsx'; // Import your main.tsx file

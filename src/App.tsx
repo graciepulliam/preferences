@@ -58,28 +58,31 @@ const AvailabilityInput: React.FC<AvailabilityInputProps> = ({ onAvailabilitySub
       </div>
       
       <form>
-        <div className="days-and-times">
-          <div className="days-row">
-            <div className="times-column">
-              {allHours.map((hour) => (
-                <div key={hour} className="hour">
-                  {hour}
-                </div>
-              ))}
-            </div>
-            {daysOfWeek.map((day) => (
-              <div key={day} className="day-column">
-                <h3 className="day">{day}</h3>
-                {allHours.map((hour) => (
-                  <label key={hour} className="custom-checkbox">
-                    <input type="checkbox" className="hidden-checkbox" />
-                    <div className="circular-checkbox"></div>
-                  </label>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="days-header">
+        <div className="day-placeholder"></div> {/* This placeholder is for the times column */}
+          {daysOfWeek.map((day) => (
+            <div key={day} className="day-name">{day}</div>
+       ))}
+      </div>
+      <div className="days-and-times">
+  <div className="times-column">
+    {allHours.map((hour) => (
+      <div key={hour} className="hour">{hour}</div>
+    ))}
+  </div>
+  
+  {daysOfWeek.map((day) => (
+    <div key={day} className="day-column">
+      {allHours.map((hour) => (
+        <label key={hour} className="custom-checkbox">
+          <input type="checkbox" className="hidden-checkbox" />
+          <div className="circular-checkbox"></div>
+        </label>
+      ))}
+    </div>
+  ))}
+</div>
+
         <div className="buttonContainer"><button type="submit" className="submitButton">SUBMIT</button></div>
       </form>
     </div>

@@ -20,6 +20,14 @@ body {
     height: max-content; 
     justify-content: center;;
   }
+
+
+.days-and-times {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-start;
+}
   
 .wrapper{
     display:block;
@@ -64,21 +72,33 @@ body {
    text-align: center; /* Center the text */
    
 }
-.days-row {
-    display: flex;
-    justify-content: center; /* Adjust as needed */
-    align-items: flex-start;
-    margin-top:0px;
-  }
-  
-  /* Style for day columns */
+
+.days-header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 10px; /* Adjust this value if needed */
+}
+
+.day-name {
+  text-align: center;
+  margin: 0 10px; /* Adjust spacing between day names */
+  font-weight: bold;
+  flex: 1; /* Makes each day name take up equal width */
+}
+
+.day-placeholder {
+  width:130px; /* Makes the placeholder take up space equivalent to a day name */
+  padding:9.5px;
+}
+
   .day-column {
     display: flex;
     flex-direction: column; /* Display children vertically */
     padding: 0px;
     align-items: flex-start; /* Align items to the start (left) of the container */
     margin: 0px; /* Add some spacing between day columns */
-    margin-bottom:0p
+    margin-bottom:20px;
   }
   .day{
     display:flex;
@@ -87,10 +107,7 @@ body {
    
   }
   .times-column {
-    display: flex;
-
-    transform: translateY(61.42px); /* Shift the column down */
-    
+    display: flex;  
     flex-direction: column; /* Display children vertically */
     align-items: flex-start; /* Align items to the start (left) of the container */
     margin: 0px; /* Add some spacing between day columns */
@@ -101,8 +118,10 @@ body {
     margin:0px;
     border: .5px solid #a8b2b9; /* Change to the desired color */
     border-radius: 0; /* Make the border radius 50% to create a circle */
-    padding:8px;
-    width:140px;
+    padding:9.5px;
+
+    width:130px;
+    font-size: small;
   }
   
 .hidden-checkbox {
